@@ -4,12 +4,12 @@ describe('App', function() {
   beforeEach(function() {
     fakeSongs = new Songs([
       {
-        artist: 'data',
+        artist: 'data', ///metalica
         url: '/test/testsong.mp3',
         title:'test song'
       },
       {
-        artist: 'data',
+        artist: 'data', /// Dave matthew
         url: '/test/testsong2.mp3',
         title:'test song 2'
       }
@@ -27,7 +27,7 @@ describe('App', function() {
     expect(app.get('currentSong')).to.equal(app.get('library').at(0));
   });
 
-  xit('queues the next song when an "enqueue" event is fired', function(){
+  it('queues the next song when an "enqueue" event is fired', function(){
     app.get('library').at(1).enqueue();
     expect(app.get('songQueue').at(0)).to.equal(app.get('library').at(1));
   });
